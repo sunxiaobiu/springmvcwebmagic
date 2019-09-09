@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+			 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			 xmlns:beans="http://www.springframework.org/schema/beans" xmlns:mvc="http://www.springframework.org/schema/mvc"
+			 xmlns:context="http://www.springframework.org/schema/context"
+			 xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+
+	<beans:bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+	  <beans:property name="templateLoaderPath" value="/webapp/WEB-INF/templates/"/>
+	  <!-- <beans:property name="templateLoaderPaths">
+		<beans:list>
+		<beans:value>/WEB-INF/freemarker/</beans:value>
+		<beans:value>/WEB-INF/freemarker/layout/</beans:value>
+		<beans:value>/</value>
+		<beans:value>classpath:modules</value>
+		<beans:value>classpath:org/springframework/web/servlet/view/freemarker</value>
+		</beans:list>
+	  </beans:property>-->
+	</beans:bean>
+
+	<beans:bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+	  <beans:property name="cache" value="true"/>
+	  <beans:property name="prefix" value=""/>
+	  <beans:property name="suffix" value=".ftl"/>
+	  <beans:property name="contentType" value="text/html; charset=UTF-8"/>
+	</beans:bean>
+
+	<!-- Scans within the base package of the application for @Components to configure as beans -->
+	<context:component-scan base-package="controller" />
+
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<mvc:annotation-driven />
+
+	<!-- 
+	<beans:bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+	  <beans:property name="resourceLoaderPath" value="/"/>
+	</beans:bean>
+	
+	<beans:bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
+		<beans:property name="viewClass" value="org.springframework.web.servlet.view.velocity.VelocityLayoutView" />
+		<beans:property name="cache" value="true" />
+		<beans:property name="prefix" value="/velocity/"/>
+		<beans:property name="suffix" value=".vm" />
+		<beans:property name="exposeRequestAttributes" value="true" />
+		<beans:property name="exposeSessionAttributes" value="true" />
+		<beans:property name="exposeSpringMacroHelpers" value="true" />
+		<beans:property name="layoutUrl" value="/velocity/layout/default_layout.vm" />
+	</beans:bean>
+	-->
+
+
+</beans:beans>

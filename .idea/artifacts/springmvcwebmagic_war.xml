@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="springmvcwebmagic:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="springmvc.webmagic.war">
+      <element id="artifact" artifact-name="springmvcwebmagic:war exploded" />
+    </root>
+  </artifact>
+</component>
