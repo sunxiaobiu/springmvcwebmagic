@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<decorators defaultdir="/WEB-INF/templates">
+    <!--<decorator name="spider" page="spider.ftl">-->
+    	<!--<pattern>/spider</pattern>-->
+    <!--</decorator>-->
+    <excludes>
+        <pattern>/spider</pattern>
+    </excludes>
+</decorators>
