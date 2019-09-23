@@ -8,8 +8,10 @@
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 
+	<mvc:resources location="static/" mapping="static/**" />
+
 	<beans:bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
-	  <beans:property name="templateLoaderPath" value="/webapp/WEB-INF/templates/"/>
+	  <beans:property name="templateLoaderPath" value="/"/>
 	  <!-- <beans:property name="templateLoaderPaths">
 		<beans:list>
 		<beans:value>/WEB-INF/freemarker/</beans:value>
@@ -23,7 +25,7 @@
 
 	<beans:bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
 	  <beans:property name="cache" value="true"/>
-	  <beans:property name="prefix" value=""/>
+	  <beans:property name="prefix" value="/WEB-INF/templates/"/>
 	  <beans:property name="suffix" value=".ftl"/>
 	  <beans:property name="contentType" value="text/html; charset=UTF-8"/>
 	</beans:bean>

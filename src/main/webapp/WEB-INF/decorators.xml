@@ -5,6 +5,6 @@
     	<!--<pattern>/spider</pattern>-->
     <!--</decorator>-->
     <excludes>
-        <pattern>/spider</pattern>
+        <pattern>/spider/*</pattern>
     </excludes>
 </decorators>
